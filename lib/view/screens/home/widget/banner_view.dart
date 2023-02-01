@@ -78,7 +78,7 @@ class BannerView extends StatelessWidget {
                         );
                       }else if(bannerDataList[index] is BasicCampaignModel) {
                         BasicCampaignModel _campaign = bannerDataList[index];
-                        Get.toNamed(RouteHelper.getBasicCampaignRoute(_campaign));
+                        Get.toNamed( RouteHelper.getBasicCampaignRoute(_campaign));
                       }else {
                         String url = bannerDataList[index];
                         print('--------------url is: $url');
