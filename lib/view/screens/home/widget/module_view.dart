@@ -39,19 +39,32 @@ class ModuleView extends StatelessWidget {
         itemBuilder: (context, index) {
           return InkWell(
             onTap: () => splashController.switchModule(index, true),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(Dimensions.RADIUS_DEFAULT),
-                color: Theme.of(context).cardColor,
-                boxShadow: [BoxShadow(color: Colors.grey[Get.isDarkMode ? 700 : 200], spreadRadius: 1, blurRadius: 5)],
-              ),
-              child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(Dimensions.RADIUS_SMALL),
-                  child: CustomImage(
-                    image: '${splashController.configModel.baseUrls.moduleImageUrl}/${splashController.moduleList[index].icon}',
-                    height: 50, width: 50,
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height:92,
+                  width:100,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    // color: Colors.blue.shade50,
+                    gradient: LinearGradient(
+                      colors: [Color(0xffAFE0F4),Colors.white],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter
+                    ),
+                    ///////////////swiggy image type
+                    boxShadow: [BoxShadow(color: Colors.grey[Get.isDarkMode ? 700 : 200], spreadRadius: 1, blurRadius: 5)],
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(Dimensions.RADIUS_SMALL),
+                      child: CustomImage(
+                        image: '${splashController.configModel.baseUrls.moduleImageUrl}/${splashController.moduleList[index].icon}',
+                        height: 45, width: 50,
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
@@ -61,8 +74,7 @@ class ModuleView extends StatelessWidget {
                   textAlign: TextAlign.center, maxLines: 2, overflow: TextOverflow.ellipsis,
                   style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall),
                 )),
-
-              ]),
+              ],
             ),
           );
         },

@@ -1,4 +1,4 @@
-package com.sixamtech.sixam_mart
+package com.letsbiz
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -58,7 +58,7 @@ class MenuButton extends StatelessWidget {
           margin: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_SMALL),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(Dimensions.RADIUS_SMALL),
-            color: isLogout ? Get.find<AuthController>().isLoggedIn() ? Colors.red : Colors.green : Theme.of(context).primaryColor,
+            color: isLogout ? Get.find<AuthController>().isLoggedIn() ? Color(0xFF29abe2) : Color(0xFF29abe2) : Theme.of(context).primaryColor,
             boxShadow: [BoxShadow(color: Colors.grey[Get.isDarkMode ? 800 : 200], spreadRadius: 1, blurRadius: 5)],
           ),
           alignment: Alignment.center,

@@ -31,7 +31,7 @@ class BannerView extends StatelessWidget {
 
       return (bannerList != null && bannerList.length == 0) ? SizedBox() : Container(
         width: MediaQuery.of(context).size.width,
-        height: GetPlatform.isDesktop ? 500 : MediaQuery.of(context).size.width * 0.65,
+        height: GetPlatform.isDesktop ? 500 : MediaQuery.of(context).size.width * 0.60,
         padding: EdgeInsets.only(top: Dimensions.PADDING_SIZE_DEFAULT),
         child: bannerList != null ? Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -43,7 +43,7 @@ class BannerView extends StatelessWidget {
                   enlargeCenterPage: true,
                   disableCenter: true,
                   // viewportFraction: 0.8,
-                  viewportFraction: 0.9,
+                  viewportFraction: 0.95,
                   autoPlayInterval: Duration(seconds: 7),
                   onPageChanged: (index, reason) {
                     bannerController.setCurrentIndex(index, true);
@@ -92,11 +92,11 @@ class BannerView extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         color: Theme.of(context).cardColor,
-                        borderRadius: BorderRadius.circular(Dimensions.RADIUS_SMALL),
+                        borderRadius: BorderRadius.circular(Dimensions.RADIUS_DEFAULT),
                         boxShadow: [BoxShadow(color: Colors.grey[Get.isDarkMode ? 800 : 200], spreadRadius: 1, blurRadius: 5)],
                       ),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(Dimensions.RADIUS_SMALL),
+                        borderRadius: BorderRadius.circular(Dimensions.RADIUS_DEFAULT),
                         child: GetBuilder<SplashController>(builder: (splashController) {
                           return CustomImage(
                             image: '$_baseUrl/${bannerList[index]}',

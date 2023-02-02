@@ -98,7 +98,8 @@ class MyApp extends StatelessWidget {
       return GetBuilder<LocalizationController>(builder: (localizeController) {
         return GetBuilder<SplashController>(builder: (splashController) {
           return (GetPlatform.isWeb && splashController.configModel == null) ? SizedBox() : GetMaterialApp(
-            title: AppConstants.APP_NAME,
+            title: "LetsBiz",
+            // title: AppConstants.APP_NAME,
             debugShowCheckedModeBanner: false,
             navigatorKey: Get.key,
             scrollBehavior: MaterialScrollBehavior().copyWith(
